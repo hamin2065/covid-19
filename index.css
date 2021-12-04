@@ -1,0 +1,30 @@
+.title {
+  text-align: center;
+}
+body {
+  margin: 0;
+}
+.nav-container {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+}
+.nav-item {
+  list-style-type: none;
+  cursor: pointer;
+}
+.nav-item a {
+  display: block;
+  padding: 6px 18px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+  transition: all 0.3s ease-in-out;
+}
+.nav-item a:hover {
+  cursor: pointer;
+  color: gray;
+}
