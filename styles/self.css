@@ -1,9 +1,11 @@
-.box {
-  border: 1px;
+#q_box {
+  display: flex;
   background-color: bisque;
   width: 500px;
   height: 300px;
-  display: flex;
   margin: auto;
   margin-top: 30px;
+  margin-bottom: 30px;
+  align-items: center;
+  vertical-align: middle;
 }

@@ -5,6 +5,7 @@
     <title>자가진단</title>
     <link rel="stylesheet" href="../index.css" />
     <link rel="stylesheet" href="../styles/self.css" />
+    <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
   </head>
   <body>
     <header>
@@ -19,16 +20,24 @@
         <li class="nav-item"><a href="self.html">자가진단</a></li>
         <li class="nav-item"><a href="trend.html">발생동향</a></li>
       </ul>
-    </nav>
+    </nav>x
     <section>
-        <div class="box">그래도 뭐라도 써야되나</div>
+      <div id="q_box">
+        <div id="que">
+          <button onclick="print(0)">TEST 시작</button>
+        </div>
+        <button id="next_button" onclick="print(i+1)">NEXT</button>
+
+        </div>
+      
+      <script type="text/javascript" src="../scripts/test.js"></script>
     </section>
     <footer>
       <span>Copyright 2021</span><br/>
       <span>contact</span>
       <span
-        ><a href="">github hamin2065</a>
-        hamin2065@gmail.com</a>
+        ><i class="fab fa-github"></i><a href="https://github.com/hamin2065">github hamin2065</a><br/>
+        <i class="fab fa-google"></i>hamin2065@gmail.com</a>
       </span>
     </footer>
   </body>
