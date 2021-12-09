@@ -7,6 +7,18 @@ table tbody {
   margin: auto;
 }
 img {
-  height: 100px;
-  width: 100px;
+  height: 200px;
+  width: 200px;
+}
+#text_box {
+  background-color: beige;
+  margin: 30px;
+  border-radius: 13px;
+}
+#table_title {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: large;
+  font-weight: 1000;
 }

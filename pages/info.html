@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../index.css" />
     <link rel="stylesheet" href="../styles/info.css" />
+    <script type="text/javascript" src="../scripts/distance.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
     <title>시설정보</title>
 </head>
 <body>
@@ -22,29 +24,61 @@
     </nav>
     <section>
         <table id="info-list">
-                <caption> 
+                <div id="table_title"> 
                     <script>
                         var today = new Date();
-                        document.write(today.getFullYear()+"년"+today.getMonth()+"월"+today.getDate()+"일");
+                        document.write(today.getFullYear()+"년"+(today.getMonth()+1)+"월"+today.getDate()+"일");
                     </script>
                 시설정보
-                </caption>
+                  </div>
                 <tbody>
                 <tr>
-                    <td><img src="../images/alcohol_1.jpg"></td>
-                    <td><img src="../images/cafe_1.jpg"></td>
-                    <td><img src="../images/res_1.png"></td>
-                    <td><img src="../images/cafe_1.png"></td>
-                </tr>
+                    <td>
+                      <img 
+                        id="health"
+                        src="../images/health_1.jpg" 
+                        onmouseover="this.src='../images/health_2.jpg'" 
+                        onmouseout="this.src='../images/health_1.jpg'"
+                        onclick="info('health')">
+                    </td>
+                    <td>
+                      <img 
+                        id="res"
+                        src="../images/res_1.jpg" 
+                        onmouseover="this.src='../images/res_2.jpg'" 
+                        onmouseout="this.src='../images/res_1.jpg'"
+                        onclick="info('res')">
+                    </td>
+                    <td>
+                      <img 
+                        id="cafe"
+                        src="../images/cafe_1.jpg" 
+                        onmouseover="this.src='../images/cafe_2.jpg'" 
+                        onmouseout="this.src='../images/cafe_1.jpg'"
+                        onclick="info('cafe')">
+                    </td>
+                    <td>
+                      <img 
+                        id="alcohol"
+                        src="../images/alcohol_1.jpg" 
+                        onmouseover="this.src='../images/alcohol_2.jpg'" 
+                        onmouseout="this.src='../images/alcohol_1.jpg'"
+                        onclick="info('alcohol')">
+                    </td>
+                  </tr>
             </tbody>
         </table>
+        <div id = "text_box"></div>
+        <script>
+          
+        </script>
     </section>
     <footer>
       <span>Copyright 2021</span><br/>
       <span>contact</span>
       <span
-        ><a href="">github hamin2065</a>
-        hamin2065@gmail.com</a>
+        ><i class="fab fa-github"></i><a href="https://github.com/hamin2065">github hamin2065</a><br/>
+        <i class="fab fa-google"></i>hamin2065@gmail.com</a>
       </span>
     </footer>
     </script>
