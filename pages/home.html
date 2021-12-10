@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>자가진단</title>
+    <title>HOME</title>
     <link rel="stylesheet" href="../index.css" />
-    <link rel="stylesheet" href="../styles/self.css" />
+    <link rel="stylesheet" href="../styles/home.css" />
     <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
   </head>
   <body>
@@ -20,22 +20,18 @@
         <li class="nav-item"><a href="self.html">자가진단</a></li>
         <li class="nav-item"><a href="trend.html">발생동향</a></li>
       </ul>
-    </nav>x
-    <section>
-      <div id="q_box">
-        <div id="que">
-          <button onclick="print(0)">TEST 시작</button>
-        </div>
-        <button id="next_button" onclick="print(i+1)">NEXT</button>
-
-        </div>
-      
-      <script type="text/javascript" src="../scripts/test.js"></script>
+    </nav>
+    <section class="center">
+      <div id="news_name">최신 뉴스</div>
+        <div class="news_box">
+        <iframe src="https://news.kbs.co.kr/news/view.do?ncd=5344583&ref=A" name="left" class="left_news">1번째 신문</iframe>
+        <iframe src="https://www.khan.co.kr/politics/politics-general/article/202112081744001" name="right" class="right_news">2번째 신문</iframe>
+      </div>
     </section>
     <footer>
       <span>Copyright 2021</span><br/>
-      <span>contact</span>
-      <span
+      <span style="display: box;">contact</span>
+      <span style="display: box;"
         ><i class="fab fa-github" style="margin-right: 5px;"></i><a href="https://github.com/hamin2065">github hamin2065</a><br/>
         <i class="fab fa-google" style="margin-right: 5px;"></i>hamin2065@gmail.com</a>
       </span>
