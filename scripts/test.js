@@ -1,12 +1,12 @@
 var questions_list = [
   {
     num: 1,
-    image: "d",
+    image: "",
     question: "발열증상이 있습니까?",
   },
   {
     num: 2,
-    image: "d",
+    image: "",
     question: "기침 증상이 있습니까?",
   },
   {
@@ -35,14 +35,32 @@ var questions_list = [
     question: "가슴 통증이 있습니까?",
   },
 ];
-var i = 0;
+var index = 0;
 
 var que = document.getElementById("que");
 function print(i) {
+  index = i;
+
   num = questions_list[i].num;
   image = questions_list[i].image;
   question = questions_list[i].question;
-  text = `<button onclick="yes()">Yes</button><br>
-  <button onclick="no()">No</button>`;
-  que.innerHTML = text + num + question;
+  // text = ``;
+  // que.innerHTML = text + num + question;
+
+  que.innerHTML = `
+  
+  ${num}
+  ${question}
+  <br/>
+  <button onclick="yes()">Yes</button>
+  <button onclick="no()">No</button>
+  `;
+}
+
+function yes() {
+  print(index + 1);
+}
+
+function no() {
+  print(index + 1);
 }
