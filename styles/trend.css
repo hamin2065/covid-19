@@ -1,0 +1,8 @@
+.box {
+  margin: 50px;
+}
+.map {
+  display: inline-block;
+  margin-right: 0px !important;
+  align-items: center;
+}

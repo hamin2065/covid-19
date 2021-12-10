@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>발생동향</title>
+    <link rel="stylesheet" href="../index.css" />
+    <link rel="stylesheet" href="../styles/trend.css" />
+    <link rel="text/javascript" href="../scripts/trend.js"/>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=7d6bf52a1bde08df04147bdd5aa17057"></script>
+    <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1 class="title">
+        대학생을 위한 <span style="font-size: 1.2em">코로나</span> 정보
+      </h1>
+    </header>
+    <nav>
+      <ul class="nav-container">
+        <li class="nav-item"><a href="home.html">HOME</a></li>
+        <li class="nav-item"><a href="info.html">시설정보</a></li>
+        <li class="nav-item"><a href="self.html">자가진단</a></li>
+        <li class="nav-item"><a href="trend.html">발생동향</a></li>
+      </ul>
+    </nav>
+    <section class="box">
+      <div id="map" style="width:400px; height:380px; margin-right:0px"></div>
+      <span id="result"></span>
+      
+
+<script>
+var mapContainer = document.getElementById('map'), // 지도를 표시할 div  
+    mapOption = { 
+        center: new kakao.maps.LatLng(36, 127.5), // 지도의 중심좌표
+        level: 250 // 지도의 확대 레벨
+    };
+
+var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+ 
+var positions = [
+    {
+        content: '<div">서울</div>', 
+        latlng: new kakao.maps.LatLng(37.541, 126.986)
+    },
+    {
+        content: '<div>부산</div>', 
+        latlng: new kakao.maps.LatLng(35.189522, 129.071503)
+    },
+    {
+        content: '<div>제주도</div>', 
+        latlng: new kakao.maps.LatLng(33.431441, 126.644237)
+    },
+    {
+        content: '<div>전라북도</div>',
+        latlng: new kakao.maps.LatLng(35.704621, 126.951141)
+    },
+    {
+      content: '<div>강원도</div>',
+      latlng: new kakao.maps.LatLng(37.757687, 128.373749)
+    },
+    {
+      content: '<div>경상북도</div>',
+      latlng: new kakao.maps.LatLng(36.119485, 128.3445734)
+    },
+    {
+      content: '<div>전라남도</div>',
+      latlng: new kakao.maps.LatLng(34.946739, 127.698212)
+    },
+    {
+      content: '<div>경기도</div>',
+      latlng: new kakao.maps.LatLng(37.2635727, 127.0286009)
+    }
+
+  ];
+
+for (var i = 0; i < positions.length; i ++) {
+    var marker = new kakao.maps.Marker({
+        map: map,
+        position: positions[i].latlng
+    });
+
+
+    var infowindow = new kakao.maps.InfoWindow({
+        content: positions[i].content // 인포윈도우에 표시할 내용
+    });
+
+    kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, infowindow));
+    kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow));
+    kakao.maps.event.addListener(marker, 'click', printOutName(infowindow));
+}
+
+function makeOverListener(map, marker, infowindow) {
+    return function() {
+        infowindow.open(map, marker);
+    };
+}
+
+function makeOutListener(infowindow) {
+    return function() {
+        infowindow.close();
+    };
+}
+
+function printOutName(infowindow){
+  return function(){
+    var p = document.getElementById("result");
+    p.innerHTML = infowindow.cc;
+  }
+}
+</script>
+
+    </section>
+    <footer>
+      <span>Copyright 2021</span><br/>
+      <span>contact</span>
+      <span
+        ><i class="fab fa-github" style="margin-right: 5px;"></i><a href="https://github.com/hamin2065">github hamin2065</a><br/>
+        <i class="fab fa-google" style="margin-right: 5px;"></i>hamin2065@gmail.com</a>
+      </span>
+    </footer>
+  </body>
+</html>
