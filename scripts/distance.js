@@ -30,7 +30,9 @@ var places_info = [
   {
     place: "alcohol",
     name: "술집",
-    desc: `<ul style="padding-bottom:10px;">`,
+    desc: `<ul style="padding-bottom:10px;"><li>테이블 간 1m 거리두기 또는 좌석/테이블 간 한 칸 띄우기 또는 테이블 간 칸막이 설치</li>
+    <li>21시이후 포장배달만 허용</li>
+    <li>식당·카페 이용 시 예방접종 완료자를 추가하는 경우 18시 이후 4인까지 사적모임 가능(21시까지)</li></ul>`,
   },
 ];
 function info(place) {

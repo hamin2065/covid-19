@@ -10,7 +10,7 @@
   <body>
     <header>
       <h1 class="title">
-        대학생을 위한 <span style="font-size: 1.2em">코로나</span> 정보
+        대학생을 위한 <a id="corona" href = "login.html">코로나</a> 정보
       </h1>
     </header>
     <nav>
@@ -21,6 +21,22 @@
         <li class="nav-item"><a href="trend.html">발생동향</a></li>
       </ul>
     </nav>
+    <div id="search_nickname"><input id="name" value="이메일을 입력해주세요" type="text"><button id="search" onclick="retrieve()">검색</button></div>
+    <script>
+      var nickName = document.getElementById("name");
+      function retrieve() {
+        if (!window.sessionStorage) {
+          alert("세션 스토리지를 지원하지 않습니다.");
+          return;
+        }
+        var val = sessionStorage.getItem(nickName.value);
+        if (val == null) {
+          alert("1회용 로그인을 해주세요!");
+        } else {
+          document.getElementById("search_nickname").innerHTML = val+"님 환영합니다!";
+        }
+      }
+    </script>
     <section class="center">
       <div id="news_name">최신 뉴스</div>
         <div class="news_box">

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../index.css" />
+    <title>1회용 로그인</title>
+  </head>
+  <body>
+    <header>
+      <h1 class="title">
+        대학생을 위한 <a id="corona" href = "login.html">코로나</a> 정보
+      </h1>
+    </header>
+    <nav>
+      <ul class="nav-container">
+        <li class="nav-item"><a href="home.html">HOME</a></li>
+        <li class="nav-item"><a href="info.html">시설정보</a></li>
+        <li class="nav-item"><a href="self.html">자가진단</a></li>
+        <li class="nav-item"><a href="trend.html">발생동향</a></li>
+      </ul>
+    </nav>
+      <form class="login_form">
+        <fieldset style="margin: auto; margin-bottom:100px; margin-top:50px; width:300px; text-align:center;">
+            <legend>1회용 로그인</legend>
+            <div class="form_field">
+              사용할 닉네임 <input id="nickName" type="text"><br/><br />
+            이메일 <input id="email"><br/><br />
+            성별 <select>
+                <option value="1">남</option>
+                <option value="2">여</option>
+            </select><br /><br />
+            <input type="checkbox"> 개인 정보 이용 동의 여부<br /><br />
+            <button id="submit"onclick="store()">저장</button>
+            </div>
+            
+        </fieldset>
+    </form>
+    <script>
+      var nickName = document.getElementById("nickName");
+      var email = document.getElementById("email");
+
+      function store() {
+        console.log("아");
+        if (!window.sessionStorage) {
+          alert("세션 스토리지를 지원하지 않습니다.");
+          return;
+        }
+        sessionStorage.setItem(email.value,nickName.value);
+        alert("저장되었습니다.");
+        window.location = "../home.html";
+      }
+    </script>
+      <footer>
+        <span>Copyright 2021</span><br/>
+        <span>contact</span>
+        <span
+          ><i class="fab fa-github" style="margin-right: 5px;"></i><a href="https://github.com/hamin2065">github hamin2065</a><br/>
+          <i class="fab fa-google" style="margin-right: 5px;"></i>hamin2065@gmail.com</a>
+        </span>
+      </footer>
+  </body>
+</html>

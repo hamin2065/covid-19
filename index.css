@@ -5,6 +5,11 @@
 .title {
   text-align: center;
 }
+#corona {
+  font-size: 1.2em;
+  text-decoration: none;
+  color: black;
+}
 body {
   margin: 0;
 }
@@ -49,4 +54,7 @@ footer a:visited {
 footer p span {
   display: inline-block;
   margin-left: 20px;
+}
+#search_nickname {
+  margin: 10px 30px 10px 30px;
 }
