@@ -5,7 +5,7 @@
     <title>발생동향</title>
     <link rel="stylesheet" href="../index.css" />
     <link rel="stylesheet" href="../styles/trend.css" />
-    <!-- <script type="text/javascript" src="../scripts/trend.js"></script> -->
+    <script type="text/javascript" src="../scripts/trend.js"></script>
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=7d6bf52a1bde08df04147bdd5aa17057"></script>
     <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
   </head>
@@ -40,8 +40,9 @@
       }
     </script>
     <section class="box">
-      <div id="map" style="width:400px; height:380px; margin-right:0px"></div>
-      <span id="result"></span>
+      <img src="../images/graph.png" style="width: 100%; height:400px; "/><br />
+      <div id="map" style="margin: left 50px;px;width:400px; height:380px;"></div>
+      <div id="result"></div>
       
 
 <script>
@@ -55,7 +56,7 @@ var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니
  
 var positions = [
     {
-        content: '<div">서울</div>', 
+        content: '<div>서울</div>', 
         latlng: new kakao.maps.LatLng(37.541, 126.986)
     },
     {
@@ -120,7 +121,13 @@ function makeOutListener(infowindow) {
 function printOutName(infowindow){
   return async function(){
     var p = document.getElementById("result");
-    p.innerHTML = infowindow.cc;
+    var index = trends.findIndex(x=>"<div>"+x.name+"</div>" === String(infowindow.cc));
+    p.innerHTML = `
+    "${trends[index].name}"에 대한 정보<br />
+    확진 누적 : ${trends[index].cum_population}<br />
+    격리해제 누적 : ${trends[index].cum_free}<br />
+    사망 누적 : ${trends[index].cum_death}<br />
+    `;
 
   }
 }

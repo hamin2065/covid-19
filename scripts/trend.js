@@ -1,39 +1,58 @@
-/* Javascript 샘플 코드 */
-function loadDoc(date) {
-  console.log(date);
-  var xhr = new XMLHttpRequest();
-  var url =
-    "http://openapi.data.go.kr/openapi/service/rest/Covid19/getCovid19SidoInfStateJson"; /*URL*/
-  var queryParams =
-    "?" +
-    encodeURIComponent("serviceKey") +
-    "=" +
-    "uiiGq0KmbA9PSCo4%2Byz%2BRW6NF7VLatpDrQoB%2BoYt7Oy0sN6r%2F%2Bm1cZRB%2BUz9Y3tDE%2BHaheYDvI%2BFvrKkiIKkrQ%3D%3D"; /*Service Key*/
-  queryParams +=
-    "&" + encodeURIComponent("pageNo") + "=" + encodeURIComponent("1"); /**/
-  queryParams +=
-    "&" + encodeURIComponent("numOfRows") + "=" + encodeURIComponent("10"); /**/
-  queryParams +=
-    "&" +
-    encodeURIComponent("startCreateDt") +
-    "=" +
-    encodeURIComponent(date); /**/
-  queryParams +=
-    "&" +
-    encodeURIComponent("endCreateDt") +
-    "=" +
-    encodeURIComponent(date); /**/
-  xhr.open("GET", url + queryParams);
-  console.log(url + queryParams);
-  xhr.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
-      loadItem(this);
-    }
-  };
-
-  xhr.send("");
-}
-
-function loadItem(xml) {
-  console.log(xml);
-}
+var trends = [
+  {
+    index: 1,
+    name: "서울",
+    cum_population: 182558,
+    cum_free: 144947,
+    cum_death: 1888,
+  },
+  {
+    index: 2,
+    name: "경기도",
+    cum_population: 154318,
+    cum_free: 128250,
+    cum_death: 4253,
+  },
+  {
+    index: 3,
+    name: "강원도",
+    cum_population: 10164,
+    cum_free: 8646,
+    cum_death: 4253,
+  },
+  {
+    index: 4,
+    name: "경상북도",
+    cum_population: 12794,
+    cum_free: 11164,
+    cum_death: 4253,
+  },
+  {
+    index: 5,
+    name: "부산",
+    cum_population: 18912,
+    cum_free: 16101,
+    cum_death: 4253,
+  },
+  {
+    index: 6,
+    name: "전라북도",
+    cum_population: 12794,
+    cum_free: 11164,
+    cum_death: 4263,
+  },
+  {
+    index: 7,
+    name: "전라남도",
+    cum_population: 5074,
+    cum_free: 4337,
+    cum_death: 4253,
+  },
+  {
+    index: 8,
+    name: "제주도",
+    cum_population: 4144,
+    cum_free: 3741,
+    cum_death: 614,
+  },
+];

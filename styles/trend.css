@@ -1,8 +1,19 @@
 .box {
+  align-items: center;
   margin: 50px;
 }
-.map {
+#chart {
+  background-color: azure;
   display: inline-block;
-  margin-right: 0px !important;
+  height: 100px;
+}
+#map {
+  display: inline-block;
+  margin: 0px !important;
   align-items: center;
+}
+#result {
+  background-color: azure;
+  display: inline-block;
+  height: 100px;
 }
